@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <#escape x as x?html><html>
 <head>
-<title>${action.getText('product')}</title>
+<title>${getText('product')}</title>
 </head>
 <body>
 <#list productList>
