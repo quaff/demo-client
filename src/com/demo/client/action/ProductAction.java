@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.demo.domain.Product;
 import com.demo.service.ProductService;
 
+import lombok.Getter;
+
 @AutoConfig
 public class ProductAction extends BaseAction {
 
@@ -21,17 +23,11 @@ public class ProductAction extends BaseAction {
 	@Autowired
 	private ProductService productService;
 
+	@Getter
 	private Product product;
 
+	@Getter
 	private List<Product> productList;
-
-	public Product getProduct() {
-		return product;
-	}
-
-	public List<Product> getProductList() {
-		return productList;
-	}
 
 	public String execute() {
 		String id = getUid();
