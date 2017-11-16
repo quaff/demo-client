@@ -22,7 +22,9 @@ public class ProductAction extends BaseAction {
 
 	@Autowired
 	private ProductService productService;
+	//private com.demo.api.ProductService productService;
 
+	
 	@Getter
 	private Product product;
 
@@ -34,6 +36,8 @@ public class ProductAction extends BaseAction {
 		if (id != null) {
 			logger.info("try find product {}", id);
 			product = productService.getById(id);
+			if (product == null)
+				return NOTFOUND;
 			return VIEW;
 		} else {
 			productList = productService.list();
