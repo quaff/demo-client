@@ -12,16 +12,15 @@ import org.ironrhino.core.util.AuthzUtils;
 import org.ironrhino.security.domain.User;
 import org.ironrhino.security.service.UserService;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 @StageConditional(value = Stage.DEVELOPMENT)
 @Fallback
 public class FallbackUserService implements UserService {
 
-	private Map<String, UserDetails> map = new ConcurrentHashMap<>();
+	private Map<String, User> map = new ConcurrentHashMap<>();
 
 	@Override
-	public UserDetails loadUserByUsername(String username) {
+	public User loadUserByUsername(String username) {
 		if ("test".equals(username)) {
 			return map.computeIfAbsent(username, key -> {
 				User user = new User();
