@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.demo.domain.Product;
-import com.demo.service.ProductService;
 
 import lombok.Getter;
 
@@ -21,10 +20,9 @@ public class ProductAction extends BaseAction {
 	private Logger logger;
 
 	@Autowired
-	private ProductService productService;
-	//private com.demo.api.ProductService productService;
+	// private com.demo.service.ProductService productService;
+	private com.demo.api.ProductService productService;
 
-	
 	@Getter
 	private Product product;
 
