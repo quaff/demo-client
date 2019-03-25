@@ -20,8 +20,8 @@ public class ProductAction extends BaseAction {
 	private Logger logger;
 
 	@Autowired
-	// private com.demo.service.ProductService productService;
-	private com.demo.api.ProductService productService;
+	private com.demo.service.ProductService productService;
+	// private com.demo.api.ProductService productService;
 
 	@Getter
 	private Product product;
